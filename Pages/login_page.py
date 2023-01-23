@@ -20,3 +20,6 @@ class Login_page(Base_page):
     def click_login_button(self):
         self.wait_and_click_element_by_selector(*self.LOGIN_BUTTON)
 
+    def verify_if_login_button_is_displayed(self):
+        self.verify_element_is_displayed(*self.LOGIN_BUTTON)
+
