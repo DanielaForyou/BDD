@@ -1,7 +1,10 @@
-from BDD.Tema_11.base_page import Base_page
+
 from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+
+from base_page import Base_page
+
 
 class Home_page(Base_page):
     FORM_AUTHENTICATON_LINK=(By.LINK_TEXT,'Form Authentication')

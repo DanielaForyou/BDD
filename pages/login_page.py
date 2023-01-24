@@ -1,7 +1,10 @@
-from BDD.Tema_11.base_page import Base_page
+
 from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+
+from base_page import Base_page
+
 
 class Login_page(Base_page):
     LOGIN_BUTTON = (By.XPATH, '//button[@class="radius"]')
@@ -25,5 +28,6 @@ class Login_page(Base_page):
         self.verify_element_is_displayed(*self.LOGIN_BUTTON)
 
     def verify_text_message(self,expected):
-        self.verify_text_on_elem_by_selector(*self.MESSAGE,expected)
+        actual_text= self.driver.find_element(*self.MESSAGE).text.replace("\n","").replace("×","")
+        assert expected==actual_text, "Error message is invalid"
 

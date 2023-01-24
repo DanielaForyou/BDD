@@ -1,7 +1,7 @@
 from browser import Browser
-from Pages.home_page import Home_page
-from Pages.login_page import Login_page
-from Pages.secure_page import Secure_page
+from pages.home_page import Home_page
+from pages.login_page import Login_page
+from pages.secure_page import Secure_page
 
 def before_all(context):
 		context.browser = Browser()

@@ -3,7 +3,7 @@ from behave import *
 
 @given('Home_page: I am on homepage')
 def step_impl(context):
-    context.home_page_object.navigate_to_homepage()
+    context.home_page_object.navigate_to_home_page()
 
 
 @when('Home_page: I click on Form Authentication')

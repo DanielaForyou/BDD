@@ -22,7 +22,7 @@ class Base_page(Browser):
 
 		def verify_text_on_elem_by_selector(self,by,selector,expected):
 				actual = self.driver.find_element(by,selector).text
-				assert actual == expected,"Error: text on element is incorrect"
+				assert actual == expected,f"Error: text on element is incorrect.expected:{expected}, actual:{actual}"
 
 		def verify_element_is_displayed(self,by,selector):
 			actual=self.driver.find_element(by,selector)
