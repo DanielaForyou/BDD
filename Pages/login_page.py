@@ -7,12 +7,13 @@ class Login_page(Base_page):
     LOGIN_BUTTON = (By.XPATH, '//button[@class="radius"]')
     USER = (By.ID, 'username')
     PASSWORD = (By.ID, 'password')
+    MESSAGE = (By.ID, 'flash')
 
     def navigate_to_login_page(self):
         self.driver.get('https://the-internet.herokuapp.com/login')
 
-    def introduce_user(self,user_name):
-        self.wait_and_send_keys_by_selector(*self.USER,user_name)
+    def introduce_user(self,username):
+        self.wait_and_send_keys_by_selector(*self.USER,username)
 
     def introduce_password(self,password):
         self.wait_and_send_keys_by_selector(*self.PASSWORD,password)
@@ -22,4 +23,7 @@ class Login_page(Base_page):
 
     def verify_if_login_button_is_displayed(self):
         self.verify_element_is_displayed(*self.LOGIN_BUTTON)
+
+    def verify_text_message(self,expected):
+        self.verify_text_on_elem_by_selector(*self.MESSAGE,expected)
 
